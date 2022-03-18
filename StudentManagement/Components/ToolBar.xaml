@@ -1,0 +1,100 @@
+﻿<UserControl x:Class="StudentManagement.Components.ToolBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:StudentManagement.Components"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             mc:Ignorable="d"
+             Name="ToolBarUC">
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="MouseLeftButtonDown">
+            <i:InvokeCommandAction Command="{Binding cmdMouseMove}" CommandParameter="{Binding ElementName=ToolBarUC}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid>
+        <StackPanel Margin="10, 5, 0, 0" 
+                            HorizontalAlignment="Left" 
+                            VerticalAlignment="Top" 
+                            Grid.Row="0" 
+                            Orientation="Horizontal">
+            <Image Source="{StaticResource LogoPNG}" 
+                           Width="30" Height="30" Margin="0,0,10,0"/>
+            <Label VerticalContentAlignment="Center" 
+                           FontSize="16" 
+                           Content="{Binding Tag, ElementName=ToolBarUC}" 
+                           FontWeight="Bold"/>
+        </StackPanel>
+
+        <Button 
+                        Command="{Binding cmdClose}"
+                        CommandParameter="{Binding ElementName=ToolBarUC}"
+                        x:Name="buttonClose"
+                        Width="20"
+                        Height="20"
+                        Style="{StaticResource MaterialDesignPaperButton}" 
+                        ToolTip="Shutdown"
+                        BorderThickness="0"
+                        Padding="0"
+                        Cursor="Hand"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Margin="0, 0, 0, 0">
+
+            <materialDesign:PackIcon HorizontalAlignment="Center" 
+                                                 VerticalAlignment="Center" 
+                                                 Kind="Close" 
+                                                 Foreground="Black"/>
+        </Button>
+
+        <Button 
+                        Command="{Binding cmdMaximize}"
+                        CommandParameter="{Binding ElementName=ToolBarUC}"
+                        x:Name="buttonMaximize"
+                        Width="20"
+                        Height="20"
+                        Style="{StaticResource MaterialDesignPaperButton}" 
+                        ToolTip="Shutdown"
+                        BorderThickness="0"
+                        Padding="0"
+                        Cursor="Hand"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Margin="0, 0, 30, 0">
+
+            <materialDesign:PackIcon HorizontalAlignment="Center" 
+                                                 VerticalAlignment="Center" 
+                                                 Kind="WindowMaximize" 
+                                                 Foreground="Black"/>
+        </Button>
+
+        <Button 
+                        Command="{Binding cmdMinimize}"
+                        CommandParameter="{Binding ElementName=ToolBarUC}"
+                        x:Name="buttonMinimize"
+                        Width="20"
+                        Height="20"
+                        Style="{StaticResource MaterialDesignPaperButton}" 
+                        ToolTip="Shutdown"
+                        BorderThickness="0"
+                        Padding="0"
+                        Cursor="Hand"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Margin="0, 0, 60, 0">
+
+            <materialDesign:PackIcon HorizontalAlignment="Center" 
+                                                 VerticalAlignment="Center" 
+                                                 Kind="WindowMinimize" 
+                                                 Foreground="Black"/>
+        </Button>
+    </Grid>
+</UserControl>

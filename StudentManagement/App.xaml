@@ -1,0 +1,17 @@
+﻿<Application x:Class="StudentManagement.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:StudentManagement"
+             StartupUri="Views/MainApplication.xaml"
+             ShutdownMode="OnMainWindowClose">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ResourcesXAML/MaterialDesignResource.xaml"/>
+                <ResourceDictionary Source="/ResourcesXAML/MainResource.xaml"/>
+                <ResourceDictionary Source="/ResourcesXAML/TitleBarStyleResource.xaml"/>
+                <ResourceDictionary Source="/ResourcesXAML/ImageResource.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
